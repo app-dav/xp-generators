@@ -4,14 +4,9 @@
 
 describe("Basic generators", function(){
 
-describe("first test", function() {
-    it("should pass", function() {expect(true).toBe(true)})
-})
-
-
 const sillyObj = {title: "Hello", desc: "world", import: "midlin"}
 
-describe("get props", () => {
+describe("get props returns values", () => {
 
     for(const [key,value] of getProps(sillyObj)){
        it("key not undefined: " + `${key}`, () => { expect(key).toBeDefined(); });
@@ -19,6 +14,16 @@ describe("get props", () => {
     }
 })
 
+describe("let's check out the Generator obj", () =>{
+    const gen = getProps(sillyObj);
 
+    for (let prop of gen) {
+        it(`${prop.key}`, ()=>{expect(true).toBeTruthy()});
+        it(`${prop.valueOf()}`, ()=>{expect(true).toBeTruthy()});
+    }
+
+    it("proto: "+Object.getPrototypeOf(gen), ()=>{expect(true).toBeTruthy()});
+    it("type: " +typeof(gen) , ()=>{expect(true).toBeTruthy()});
+})
 
 })
