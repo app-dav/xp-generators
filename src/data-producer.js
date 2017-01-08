@@ -11,5 +11,14 @@ function* getProps(obj){
     }
 }
 
+function* GetArray(count, returnVal){
+
+    for(let i=0;i<count;i++){
+        yield "Item " + i;
+    }
+
+    if(returnVal) return "done";
+}
+
 
 
