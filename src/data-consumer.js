@@ -9,6 +9,10 @@ function* AddToCache(arr ){
     return arr;
 }
 
+function n(){
+    return 'n';
+}
+
 
 
 
